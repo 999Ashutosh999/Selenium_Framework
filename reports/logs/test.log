@@ -1,0 +1,3 @@
+2026-02-15 18:07:14,728 | INFO | TestLogger | This is info log
+2026-02-15 18:07:14,728 | ERROR | TestLogger | This is error log
+2026-02-15 18:07:14,728 | WARNING | TestLogger | This is warning log
