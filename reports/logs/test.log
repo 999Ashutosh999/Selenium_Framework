@@ -1,3 +1,20 @@
-2026-02-15 18:07:14,728 | INFO | TestLogger | This is info log
-2026-02-15 18:07:14,728 | ERROR | TestLogger | This is error log
-2026-02-15 18:07:14,728 | WARNING | TestLogger | This is warning log
+01:42:34 | INFO | Logo is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:34 | INFO | Navigation is displayed on the home page.
+01:42:39 | INFO | Clicked element: //a[text()= ' Signup / Login']
+01:42:39 | INFO | Sent keys to element: //input[@placeholder="Name"]
+01:42:40 | INFO | Sent keys to element: //div[@class='signup-form']//input[@placeholder="Email Address"]
+01:42:43 | INFO | Clicked element: //button[@data-qa="signup-button"]
+01:42:45 | INFO | Clicked element: //a[text()= ' Signup / Login']
+01:42:46 | INFO | Sent keys to element: //div[@class="login-form"]//input[@placeholder="Email Address"]
+01:42:46 | INFO | Sent keys to element: //input[@placeholder="Password"]
+01:42:49 | INFO | Clicked element: //button[@data-qa="login-button"]
+eys to element: //div[@class="login-form"]//input[@placeholder="Email Address"]
+2026-02-21 01:42:46,157 - INFO - Sent keys to element: //input[@placeholder="Password"]
+2026-02-21 01:42:49,562 - INFO - Clicked element: //button[@data-qa="login-button"]

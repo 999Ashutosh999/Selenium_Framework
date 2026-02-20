@@ -10,6 +10,7 @@ def driver():
     headless = False    
     if browser == "chrome":
         options = ChromeOptions()
+        options.add_argument("--log-level=3")
         if headless:
             options.add_argument("--headless")
         driver = webdriver.Chrome(options=options)

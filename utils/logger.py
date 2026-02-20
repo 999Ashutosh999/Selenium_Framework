@@ -1,4 +1,3 @@
-# crate a class for logs that displays logs in realtime in terminal and save the logs in reports/logs/test.log
 import logging
 import os
 
@@ -6,24 +5,43 @@ class Logger:
 
     @staticmethod
     def get_logger():
+
         logger = logging.getLogger("Selenium_Framework")
         logger.setLevel(logging.DEBUG)
 
-        # Create handlers
+        if logger.handlers:
+            return logger
+
+        # Get absolute path of this file
+        current_path = os.path.abspath(__file__)
+
+        # Split path until we reach selenium_framework
+        while os.path.basename(current_path) != "selenium_framework":
+            current_path = os.path.dirname(current_path)
+
+        framework_root = current_path
+
+        log_dir = os.path.join(framework_root, "reports", "logs")
+        os.makedirs(log_dir, exist_ok=True)
+
+        log_file = os.path.join(log_dir, "test.log")
+
         c_handler = logging.StreamHandler()
-        f_handler = logging.FileHandler(os.path.join("reports", "logs", "test.log"))
+        f_handler = logging.FileHandler(log_file)
+
         c_handler.setLevel(logging.INFO)
         f_handler.setLevel(logging.DEBUG)
 
-        # Create formatters and add it to handlers
-        c_format = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        f_format = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        c_handler.setFormatter(c_format)
-        f_handler.setFormatter(f_format)
+        formatter = logging.Formatter(
+            "%(asctime)s - %(levelname)s - %(message)s"
+        )
 
-        # Add handlers to the logger
-        if not logger.hasHandlers():
-            logger.addHandler(c_handler)
-            logger.addHandler(f_handler)
+        c_handler.setFormatter(formatter)
+        f_handler.setFormatter(formatter)
+
+        logger.addHandler(c_handler)
+        logger.addHandler(f_handler)
 
         return logger
+    
+

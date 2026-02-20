@@ -14,7 +14,7 @@ class ConfigReader:
         self.locator_config.read(locator_path)
         self.data_config.read(data_path)
 
-    def get_locator(self, section, key):
+    def read_locator(self, section, key):
         try:
             return self.locator_config.get(section, key)
         except Exception as e:
